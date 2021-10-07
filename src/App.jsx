@@ -1,7 +1,7 @@
 import './styles/styles.css';
 import logo from './media/logo.png';
-import borderCollie from './media/borderCollie.jpg';
 import rhodesian from './media/rhodesian.jpg';
+import borderCollie from "./media/borderCollie.jpg";
 
 function App() {
   return (
@@ -32,24 +32,25 @@ function App() {
         <section>
           <h1>Razas de Perros</h1>
           <ul className='breedCardContainer'>
-            <li className='breedCard'>
-              <div className='contenedorImagen'>
-                <img src={borderCollie} alt='Border Collie' />
-              </div>
-              <span className='breedTitle'>Border Collie </span>
-            </li>
-            <li className='breedCard'>
-              <div className='contenedorImagen'>
-                <img src={rhodesian} alt='Border Collie' />
-              </div>
-              <span className='breedTitle'>Rhodesian</span>
-            </li>
+            <cardrazasperros nombreraza ="rhodesian" imagen={rhodesian}/>
+            <cardrazasperros nombreraza ="border collie" imagen ={borderCollie}/>
           </ul>
         </section>
         <section></section>
       </main>
       <footer></footer>
     </div>
+  );
+}
+
+function cardrazasperros({imagen,nombreraza}){
+  return (
+  <li className='breedCard'>
+    <div className='contenedorImagen'>
+     <img src={imagen} alt={nombreraza} />
+  </div>
+  <span className='breedTitle'>{nombreraza}</span>
+</li>
   );
 }
 
